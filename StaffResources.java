@@ -12,7 +12,10 @@ public final class StaffResources extends JavaPlugin {
         // Plugin startup logic
         getCommand("report").setExecutor(new report());
         getCommand("sc").setExecutor(new staffChat());
+        getCommand("ac").setExecutor(new adminChat());
         getCommand("srreload").setExecutor(new reloadConfig());
+        getCommand("vanish").setExecutor(new vanish());
+        getCommand("unvanish").setExecutor(new unvanish());
 
         config.setup();
         config.get().addDefault("Staff Chat Prefix", "§c§l[Staff Chat] ");
