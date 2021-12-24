@@ -1,5 +1,6 @@
-package me.catlikecake934.stafffunctions.commands;
+package me.catlikecake934.staffresources.commands;
 
+import me.catlikecake934.staffresources.config;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -14,12 +15,11 @@ public class staffChat implements CommandExecutor {
             Player p = (Player) sender;
             if (p.hasPermission("sr.chat")) {
                 if (args.length >= 1) {
-                    String message;
                     StringBuilder sb = new StringBuilder();
                     for (int i = 0; i < args.length; i++) {
                         sb.append(args[i] + " ");
                     }
-                    Bukkit.broadcast(ChatColor.RED + "" + ChatColor.BOLD + "[Staff Chat] " + p.getName() + ": " + ChatColor.WHITE + sb.toString().stripTrailing(), "sr.chat");
+                    Bukkit.broadcast(config.get().getString("Staff Chat Prefix") + p.getName() + ": " + ChatColor.WHITE + sb.toString().stripTrailing(), "sr.chat");
                 }
             }else{
                 p.sendMessage(ChatColor.RED + "You cannot execute this command!");

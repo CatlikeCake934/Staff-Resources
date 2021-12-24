@@ -1,4 +1,4 @@
-package me.catlikecake934.stafffunctions.commands;
+package me.catlikecake934.staffresources.commands;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -14,7 +14,6 @@ public class report implements CommandExecutor {
         if (sender instanceof Player player){
             Player p = (Player) sender;
             if (args.length >= 2){
-                String message;
                 StringBuilder sb = new StringBuilder();
                 for(int i = 1; i < args.length; i++){
                     sb.append(args[i] + " ");
